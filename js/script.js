@@ -1,11 +1,16 @@
 var parola = prompt("Inserisci una parola");
-var palindromo = false;
+var firstHalf = [];
+var secondHalf = [];
 
-function palin(parola) {
-    for (i = 0; i<parola.length/2; i++) {
-        if (parola.charAt(i) == parola.charAt(i + parola.length / 2 -1)) {
-            return true;
-        }
-    }
-}
-console.log(palindromo)
+function palindromo(x) {
+    for (i = 0; i < x.length / 2; i++) {
+        firstHalf.push(x.charAt(i))
+    };
+    for (i = x.length; i >= i.length / 2 + 1; i--) {
+        secondHalf.push(x.charAt(i));
+    };
+};
+
+palindromo(parola);
+
+console.log(firstHalf + secondHalf);
